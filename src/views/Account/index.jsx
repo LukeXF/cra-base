@@ -5,21 +5,26 @@ import axios from "axios";
 import Loader from "../../components/Loader";
 
 const Account = () => {
-	const [allAccounts, setAllAccounts] = useState([]);
-	const [loading, setLoading] = useState(true);
+	const [allAccounts, setAllAccounts] = useState([{}, {}, {}, {}, {}, {}, {}, {}, {},]);
+	// const [loading, setLoading] = useState(true);
 
 	const loadUsers = async () => {
 		try {
 			const url = "https://dummyapi.io/data/v1"
 			const limit = 10;
+
+			// makes a GET request with a header API key
 			const { data } = await axios.get(`${url}/user?limit=${limit}`, {
 				headers: {
 					'app-id': '6176cf6c0fe72e5cc567ceb5'
 				}
 			});
-			console.log({ data })
+
+			// their API returns data inside the response, and axios results is data, hence data.data
 			setAllAccounts(data?.data)
-			setLoading(false);
+
+			// to remove the loader
+			// setLoading(false);
 		} catch (error) {
 			if (axios.isAxiosError(error)) {
 				// axios error
@@ -36,7 +41,7 @@ const Account = () => {
 	}, [])
 
 
-	if (loading) return <Loader/>
+	// if (loading) return <Loader/>
 	return <div>
 		<Container>
 
@@ -47,8 +52,11 @@ const Account = () => {
 				</Grid>
 			</Grid>
 			<hr/>
+			<h1>All accounts</h1>
 			<Grid container spacing={2}>
-				{allAccounts?.map(account => <Grid item md={4}><AccountCard {...account}/></Grid>)}
+				{allAccounts?.map((account, i) => <Grid key={i} item md={4}>
+					<AccountCard {...account}/>
+				</Grid>)}
 			</Grid>
 
 		</Container>
