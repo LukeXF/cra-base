@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AccountCard from "../../components/AccountCard";
 import { Container, Grid } from "@mui/material";
 import axios from "axios";
-import Loader from "../../components/Loader";
+// import Loader from "../../components/Loader";
 
 const Account = () => {
 	const [allAccounts, setAllAccounts] = useState([{}, {}, {}, {}, {}, {}, {}, {}, {},]);

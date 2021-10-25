@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-export default theme => css`
+const theme = () => css`
     .nav-links {
 	    display: flex;
         flex-direction: row;
@@ -18,7 +18,6 @@ export default theme => css`
 		    }
 	    }
     }
-
-    background: green;
-    color: blue;
 `;
+
+export default theme;

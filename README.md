@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# cra-base
+
+A project I used to demonstrate basic React.js features to new developers.
+
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
