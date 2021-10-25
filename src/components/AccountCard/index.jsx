@@ -1,21 +1,20 @@
 import React from 'react';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material';
 
-const AccountCard = () => {
+const AccountCard = ({id, title, firstName, lastName, picture}) => {
 	return <Card sx={{ maxWidth: 345 }}>
 		<CardMedia
 			component="img"
 			height="140"
-			image="https://randomuser.me/api/portraits/women/27.jpg"
-			alt="green iguana"
+			image={picture}
+			alt={`${firstName}'s profile picture`}
 		/>
 		<CardContent>
 			<Typography gutterBottom variant="h5" component="div">
-				Lizard
+				{title} {firstName} {lastName}
 			</Typography>
 			<Typography variant="body2" color="text.secondary">
-				Lizards are a widespread group of squamate reptiles, with over 6,000
-				species, ranging across all continents except Antarctica
+				{firstName}'s Profile
 			</Typography>
 		</CardContent>
 		<CardActions>
