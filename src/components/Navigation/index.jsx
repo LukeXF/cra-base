@@ -1,8 +1,9 @@
-import { AppBar, Box, IconButton, List, ListItem, ListItemText, Toolbar, Typography } from "@mui/material";
+import React from 'react';
+import { AppBar, Box, IconButton, List, ListItem, ListItemText, Toolbar, Typography, Link } from "@mui/material";
 import { Menu } from "@mui/icons-material";
 import styles from './styles';
 import { useTheme } from '@mui/material/styles';
-import { Link } from "react-router-dom";
+import { NavLink as RouterLink } from 'react-router-dom';
 
 const Navigation = () => {
 	const theme = useTheme();
@@ -20,14 +21,20 @@ const Navigation = () => {
 					>
 						<Menu/>
 					</IconButton>
-					<Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className="test">
+					<Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
 						Test
 					</Typography>
 
-					<List>
-						<ListItem> <Link to="/"><ListItemText primary="Home"/></Link></ListItem>
-						<ListItem> <Link to="/about"><ListItemText primary="About"/></Link></ListItem>
-						<ListItem> <Link to="/account"><ListItemText primary="My Account"/></Link></ListItem>
+					<List className="nav-links">
+						<ListItem>
+							<Link className="nav-links-link" component={RouterLink} exact to="/">Home</Link>
+						</ListItem>
+						<ListItem>
+							<Link className="nav-links-link" component={RouterLink} to="/about">About</Link>
+						</ListItem>
+						<ListItem>
+							<Link className="nav-links-link" component={RouterLink} to="/account">Account</Link>
+						</ListItem>
 					</List>
 				</Toolbar>
 			</AppBar>
