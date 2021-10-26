@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import AccountCard from "../../components/AccountCard";
-import { Container, Grid } from "@mui/material";
+import { Button, Container, Grid } from "@mui/material";
 import axios from "axios";
+import { NavLink as RouterLink } from 'react-router-dom';
 // import Loader from "../../components/Loader";
 
 const Account = () => {
@@ -44,7 +45,7 @@ const Account = () => {
 	// if (loading) return <Loader/>
 	return <div>
 		<Container>
-
+			<Button variant="contained" component={RouterLink} to={'/account/billing'}>Billing</Button>
 			<Grid container spacing={2}>
 				<Grid item md={4}>
 					<h1>Your account</h1>
