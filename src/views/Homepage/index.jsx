@@ -1,8 +1,9 @@
 import React from 'react';
 
+
 const Homepage = () => {
 
-	return <div>Welcome Home</div>;
+	return <div>Home page</div>;
 }
 
 
