@@ -43,7 +43,7 @@ render(){
       <h4>{this.state.city}</h4>
       <p>High: {this.state.high}</p>
       <p>Low: {this.state.low}</p>
-      <p>{this.state.weather} <img src={iconUrl} /></p>
+      <p>{this.state.weather} <img src={iconUrl} alt="weather" /></p>
     </div>
     <div className="modal-footer">
       <a href="#!" className="modal-close waves-effect waves-green btn-flat">OK</a>

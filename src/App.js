@@ -22,6 +22,7 @@ const App = () => {
           <Route path="/account/billing" component={Billing} />
           <Route path="/" exact component={Homepage} />
         </Switch>
+        <Weather />
       </div>
     </Router>
   );

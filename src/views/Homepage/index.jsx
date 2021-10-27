@@ -3,7 +3,7 @@ import Weather from "../../components/Weather"
 
 const Homepage = () => {
 
-	return <div><Weather/></div>;
+	return <div>Home page</div>;
 }
 
 
