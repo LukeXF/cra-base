@@ -1,8 +1,9 @@
 import React from 'react';
+import Weather from "../../components/Weather"
 
 const Homepage = () => {
 
-	return <div>Welcome Home</div>;
+	return <div><Weather/></div>;
 }
 
 
