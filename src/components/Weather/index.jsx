@@ -28,9 +28,10 @@ class Weather extends Component {
         icon: resp.data.weather[0].icon,
       })
     })
-     const elems = document.querySelectorAll('.modal');
-     const instances = window.M.Modal.init(elems);
+    //  const elems = document.querySelectorAll('.modal');
+    //  const instances = window.M.Modal.init(elems);
   }
+
 render(){
   const iconUrl = `http://openweathermap.org/img/w/${this.state.icon}.png`;
   return(
