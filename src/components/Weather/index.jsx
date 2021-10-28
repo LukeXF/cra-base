@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import WeatherDetails  from "../WeatherDetails";
+import { Button } from "@mui/material";
 
 
 class Weather extends Component {
@@ -12,6 +14,7 @@ class Weather extends Component {
       icon: "",
       high: "",
       low: "",
+      open: false,
     }
   }
 
@@ -28,8 +31,8 @@ class Weather extends Component {
         icon: resp.data.weather[0].icon,
       })
     })
-     const elems = document.querySelectorAll('.modal');
-     const instances = window.M.Modal.init(elems);
+    //  const elems = document.querySelectorAll('.modal');
+    //  window.M.Modal.init(elems);
   }
 
 render(){
@@ -38,8 +41,8 @@ render(){
     <div className="App">
       <h1>Weather today</h1>
       <p>{this.state.temp} °C</p>
-        <a className="waves-effect waves-light btn modal-trigger" href="#modal1">Details</a>
-  <div id="modal1" className="modal">
+        {/* <a className="waves-effect waves-light btn modal-trigger" href="#modal1">Details</a> */}
+  {/* <div id="modal1" className="modal">
     <div className="modal-content">
       <h4>{this.state.city}</h4>
       <p>High: {this.state.high}</p>
@@ -49,7 +52,19 @@ render(){
     <div className="modal-footer">
       <a href="#!" className="modal-close waves-effect waves-green btn-flat">OK</a>
     </div>
-  </div>
+  </div> */}
+  <WeatherDetails
+    open={this.state.open}
+    onClose={() =>  this.setState({ open:false })}
+    weather={{
+      temp: this.state.temp,
+      city: this.state.city,
+      weather: this.state.weather,
+      icon: this.state.icon,
+      high: this.state.high,
+      low: this.state.low,
+    }}/>
+      <Button onClick={() =>  this.setState({ open:true })} variant="contained">Details</Button>
     </div>
   );
 }
