@@ -28,8 +28,8 @@ class Weather extends Component {
         icon: resp.data.weather[0].icon,
       })
     })
-    //  const elems = document.querySelectorAll('.modal');
-    //  const instances = window.M.Modal.init(elems);
+     const elems = document.querySelectorAll('.modal');
+     const instances = window.M.Modal.init(elems);
   }
 
 render(){
@@ -37,7 +37,7 @@ render(){
   return(
     <div className="App">
       <h1>Weather today</h1>
-      <p>{this.state.temp}</p>
+      <p>{this.state.temp} °C</p>
         <a className="waves-effect waves-light btn modal-trigger" href="#modal1">Details</a>
   <div id="modal1" className="modal">
     <div className="modal-content">
