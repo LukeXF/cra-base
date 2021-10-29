@@ -19,7 +19,7 @@ class Weather extends Component {
   }
 
   componentDidMount(){
-    const url = "https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=78753ac2829720b600f59b287f686674"
+    const url = "https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=77ef59c89e2314e4b004c6a6063a4a21"
     axios.get(url).then((resp)=>{
       // console.log(resp.data);
       this.setState({
@@ -36,7 +36,7 @@ class Weather extends Component {
   }
 
 render(){
-  const iconUrl = `http://openweathermap.org/img/w/${this.state.icon}.png`;
+  // const iconUrl = `http://openweathermap.org/img/w/${this.state.icon}.png`;
   return(
     <div className="App">
       <h1>Weather today</h1>
@@ -55,7 +55,7 @@ render(){
   </div> */}
   <WeatherDetails
     open={this.state.open}
-    onClose={() =>  this.setState({ open:false })}
+    onClose={() => this.setState({ open:false })}
     weather={{
       temp: this.state.temp,
       city: this.state.city,
@@ -64,7 +64,7 @@ render(){
       high: this.state.high,
       low: this.state.low,
     }}/>
-      <Button onClick={() =>  this.setState({ open:true })} variant="contained">Details</Button>
+      <Button onClick={() => this.setState({ open:true })} variant="contained">Details</Button>
     </div>
   );
 }
